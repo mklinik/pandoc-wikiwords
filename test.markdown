@@ -2,6 +2,8 @@
 
 WhatAboutWikiLinks
 
+This is a WikiWord while thisIsNot
+
 Some math: $\Sigma \vdash x^2 : int$
 
 # Level 1 header
