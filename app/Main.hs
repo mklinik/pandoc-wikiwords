@@ -14,7 +14,7 @@ pwoth = "0-9_"
 pwnup = pwlow ++ pwoth
 pwnlo = pwupp ++ pwoth
 pwany = pwupp ++ pwnup
-wikiWord = "\\<[" ++ pwupp ++ "][" ++ pwnlo ++ "]*[" ++ pwlow ++ "][" ++ pwnup ++ "]*[" ++ pwupp ++ "][" ++ pwany ++ "]*\\>"
+wikiWord = "^[" ++ pwupp ++ "][" ++ pwnlo ++ "]*[" ++ pwlow ++ "][" ++ pwnup ++ "]*[" ++ pwupp ++ "][" ++ pwany ++ "]*$"
 
 isWikiWord :: String -> Bool
 isWikiWord s = (s =~ wikiWord)
