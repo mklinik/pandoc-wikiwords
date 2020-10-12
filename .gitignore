@@ -1,2 +1,5 @@
 /.stack-work
 test.html
+pandoc-wikiwords.cabal
+stack.yaml.lock
+tags
