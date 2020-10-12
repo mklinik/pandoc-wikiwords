@@ -1,5 +1,8 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Main where
 
+import qualified Data.Text as Text
+import Data.Text (Text)
 import Text.Pandoc.JSON
 import Text.Regex.Posix
 
@@ -16,11 +19,11 @@ pwnlo = pwupp ++ pwoth
 pwany = pwupp ++ pwnup
 wikiWord = "^[" ++ pwupp ++ "][" ++ pwnlo ++ "]*[" ++ pwlow ++ "][" ++ pwnup ++ "]*[" ++ pwupp ++ "][" ++ pwany ++ "]*$"
 
-isWikiWord :: String -> Bool
-isWikiWord s = (s =~ wikiWord)
+isWikiWord :: Text -> Bool
+isWikiWord s = (Text.unpack s =~ wikiWord)
 
 wikiWordToLink :: Inline -> Inline
-wikiWordToLink (Str word) | isWikiWord word = Link nullAttr [Str word] (word ++ ".html", word)
+wikiWordToLink (Str word) | isWikiWord word = Link nullAttr [Str word] (Text.concat [word, ".html"], word)
 wikiWordToLink x = x
 
 main :: IO ()
