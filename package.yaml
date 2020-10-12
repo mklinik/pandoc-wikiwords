@@ -8,7 +8,6 @@ copyright:           "2020 Author name here"
 
 extra-source-files:
 - README.md
-- ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -25,9 +24,6 @@ dependencies:
 - pandoc-types
 - regex-posix
 
-library:
-  source-dirs: src
-
 executables:
   pandoc-wikiwords:
     main:                Main.hs
@@ -36,5 +32,3 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies:
-    - pandoc-wikiwords
